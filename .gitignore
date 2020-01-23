@@ -43,9 +43,9 @@ npm-debug.log
 *.map
 
 ## Build artifacts
-**/ts/**/*.js
-**/ts/**/*.jsx
-**/dist
+# **/ts/**/*.js
+# **/ts/**/*.jsx
+# **/dist
 **/bundles
 **/ts/**/*.d.ts
 
