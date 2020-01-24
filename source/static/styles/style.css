@@ -171,3 +171,16 @@ div.tree > ul > li > a {
 .tree li a:hover+ul ul::before{
 	border-color:  #aaa;
 }
+
+.close-modal {
+	float: right;
+	max-width: 30px;
+}
+
+.show-modal-btn {
+	float: right;
+		position: absolute;
+		max-height: 48%;
+    padding: 10px 0.75em;
+    margin-left: 5px;
+}

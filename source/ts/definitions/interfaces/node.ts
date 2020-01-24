@@ -22,10 +22,10 @@ export interface Node {
   /**
    * content that node represents.
    *
-   * @type {string}
+   * @type {Array<Content>}
    * @memberof Node
    */
-  content?: string;
+  content?: Content[];
   /**
    * a boolean which is true the node leaves(children) are visible
    *
@@ -40,4 +40,9 @@ export interface Node {
    * @memberof Node
    */
   children?: Node[];
+}
+
+export interface Content {
+  type: "title" | "paragraph";
+  value: string;
 }

@@ -16,6 +16,7 @@
     "@types/node": "^12.0.8",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
+    "@types/react-modal": "^3.10.4",
     "@types/react-router-dom": "^4.3.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -54,7 +55,7 @@
   "keywords": [],
   "license": "UNLICENSED",
   "scripts": {
-    "build": "parcel build ./source/static/html/index.html",
+    "build": "parcel build ./source/static/html/index.html --public-url ./ --out-dir ./docs",
     "prettify": "prettier --write ./source/**/*.{ts,tsx}",
     "start": "parcel ./source/static/html/index.html"
   },

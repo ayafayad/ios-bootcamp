@@ -7,9 +7,7 @@
  */
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, RouteProps } from "react-router-dom";
-import { ROUTES } from "./definitions/consts/routes";
-import { NotFound } from "layouts/not-found";
+import { Home } from "layouts/home";
 
 /**
  * state of application component.
@@ -38,32 +36,7 @@ class App extends React.Component<{}, AppState> {
 
   render(): React.ReactNode {
     return (
-      <BrowserRouter>
-        <Switch>
-          {Object.keys(ROUTES).map((route, index) => {
-            // tslint:disable-next-line: variable-name
-            const Component = ROUTES[route].component;
-            return (
-              <Route
-                key={index}
-                path={ROUTES[route].path}
-                exact={ROUTES[route].exact}
-                render={(renderProps: RouteProps) => {
-                  return (
-                    <Component {...renderProps} {...ROUTES[route].props} />
-                  );
-                }}
-              />
-            );
-          })}
-          <Route
-            key={"not-found"}
-            render={() => {
-              return <NotFound />;
-            }}
-          />
-        </Switch>
-      </BrowserRouter>
+      <Home/>
     );
   }
 }
