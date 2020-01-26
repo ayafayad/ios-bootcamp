@@ -100,9 +100,28 @@ export class Node extends React.Component<NodeInterface,{
           />
             <h1>{this.props.title}</h1>
             {this.props.content.map((block, i)=> {
-              return block.type === "paragraph" ?
-                <p key={i} >{block.value}</p> :
-                <h2 key={i} >{block.value}</h2>;
+              let response: React.ReactElement;
+
+              switch(block.type) {
+                case "paragraph":
+                  response = <p key={i} >{block.value}</p>;
+                  break;
+                case "title":
+                  response = <h2 key={i} >{block.value}</h2>;
+                  break;
+                case "list":
+                  response = (
+                    <ul key={i}>
+                      {(block.value as string[]).map((item,index)=> {
+                        return <li key={index} >{item}</li>;
+                      })}
+                    </ul>
+                  );
+                  break;
+                default:
+                  response = <p key={i} >{block.value}</p>;
+              }
+              return response;
             })}
         </Modal>
       )}

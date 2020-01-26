@@ -43,6 +43,6 @@ export interface Node {
 }
 
 export interface Content {
-  type: "title" | "paragraph";
-  value: string;
+  type: "title" | "paragraph" | "list";
+  value: string | string[];
 }
