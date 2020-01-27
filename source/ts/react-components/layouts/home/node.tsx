@@ -97,14 +97,36 @@ export class Node extends React.Component<
 
               switch (block.type) {
                 case "paragraph":
-                  response = <p key={i}>{(block.value as string).split("\n").map((line,index)=> {
-                    return(
-                      <>
-                      {line}
-                      <br/>
-                      </>
-                    );
-                  })}</p>;
+                  response = (
+                    <p key={i}>
+                      {(block.value as string)
+                        .split("\n")
+                        .map((line, index) => {
+                          return (
+                            <>
+                              {line}
+                              <br />
+                            </>
+                          );
+                        })}
+                    </p>
+                  );
+                  break;
+                  case "code":
+                  response = (
+                    <div className="code" key={i}>
+                      {(block.value as string)
+                        .split("\n")
+                        .map((line, index) => {
+                          return (
+                            <>
+                              {line}
+                              <br />
+                            </>
+                          );
+                        })}
+                    </div>
+                  );
                   break;
                 case "title":
                   response = <h2 key={i}>{block.value}</h2>;

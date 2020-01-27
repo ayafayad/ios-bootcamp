@@ -13,25 +13,18 @@ export class Home extends React.Component {
   render(): React.ReactNode {
     return (
       <div className="tree">
-      <ul>
-
-        <li className="root">
-          <a href="#">{TREE.title} </a>
-          <ul className="vertical">
-            {Common.exist(TREE.children) && 
-              TREE.children.map((leaf, index)=> {
-                return(
-                  <Node
-                    key={index}
-                    {...leaf}
-                  />
-                );
-              })
-            }
-          </ul>
-        </li>
-      </ul>
-    </div>  
+        <ul>
+          <li className="root">
+            <a href="#">{TREE.title} </a>
+            <ul className="vertical">
+              {Common.exist(TREE.children) &&
+                TREE.children.map((leaf, index) => {
+                  return <Node key={index} {...leaf} />;
+                })}
+            </ul>
+          </li>
+        </ul>
+      </div>
     );
   }
 }
